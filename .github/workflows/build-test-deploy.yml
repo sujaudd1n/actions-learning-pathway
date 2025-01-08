@@ -26,7 +26,7 @@ jobs:
       - run: npm install
       - run: npm test
   deploy:
-    if: ${{ github.event_name == 'push' }}
+    if: github.event_name == 'push' && github.ref_name == 'main'
     permissions:
       contents: write
       pages: write     
